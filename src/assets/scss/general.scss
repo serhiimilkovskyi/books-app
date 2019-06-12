@@ -30,6 +30,10 @@ body {
   }
 }
 
+sup {
+  color: $danger;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

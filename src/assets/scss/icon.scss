@@ -1,0 +1,9 @@
+[class^="icon-"],
+[class*="icon-"] {
+  font-style: normal;
+
+  & + [class^="icon-"],
+  & + [class*="icon-"] {
+    margin-left: 5px;
+  }
+}

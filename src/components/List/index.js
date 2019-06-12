@@ -5,7 +5,7 @@ import {
 import ListItem from '../ListItem';
 
 const List = ({
-  className, itemClassName, list, onEdit, onAdd, showAddCard,
+  className, itemClassName, list, onEdit, onAdd, showAddCard, onDelete,
 }) => (
   <ul className={`list ${className}`}>
     <Fragment>
@@ -14,6 +14,7 @@ const List = ({
           className={itemClassName}
           key={item.id}
           onEdit={onEdit}
+          onDelete={onDelete}
           item={item}
         />
       ))}
@@ -37,6 +38,7 @@ List.propTypes = {
   itemClassName: string,
   onEdit: func,
   onAdd: func,
+  onDelete: func,
 };
 
 List.defaultProps = {
@@ -45,6 +47,7 @@ List.defaultProps = {
   itemClassName: '',
   onAdd: null,
   onEdit: null,
+  onDelete: null,
 };
 
 export default List;

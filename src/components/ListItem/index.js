@@ -4,16 +4,18 @@ import {
 } from 'prop-types';
 
 const ListItem = ({
-  className, item, onEdit, onAdd, hideMedia,
+  className, item, onEdit, onAdd, hideMedia, onDelete,
 }) => (
   <li className="list-item-wrapper">
     <div className={`list-item-container ${className}`}>
       {!hideMedia && (
         <div className="list-item-media">
+          <div className="list-item-media-title">{item.mediaTitle}</div>
           <img src={item.imageSrc} alt={item.title} />
           {onEdit && (
             <div className="list-item-action">
-              <i onClick={onEdit} role="presentation" className="icon-edit">&#9998;</i>
+              <i onClick={() => onEdit(item)} role="presentation" className="icon-edit">&#9998;</i>
+              <i onClick={() => onDelete(item)} role="presentation" className="icon-trash">&#9988;</i>
             </div>
           )}
         </div>
@@ -44,6 +46,7 @@ ListItem.propTypes = {
   className: string,
   onEdit: func,
   onAdd: func,
+  onDelete: func,
 };
 
 ListItem.defaultProps = {
@@ -51,6 +54,7 @@ ListItem.defaultProps = {
   item: {},
   onAdd: null,
   onEdit: null,
+  onDelete: null,
   hideMedia: false,
 };
 

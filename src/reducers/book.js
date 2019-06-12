@@ -27,6 +27,18 @@ export default (state = initialState, action = {}) => {
         fetching: false,
         fetched: true,
       };
+    case UPDATE_BOOK_STARTED:
+      return {
+        ...state,
+        fetching: true,
+      };
+    case UPDATE_BOOK_FINISHED:
+      return {
+        ...state,
+        ...action.payload,
+        fetching: false,
+        fetched: true,
+      };
     default: return state;
   }
 };
