@@ -27,7 +27,7 @@ export const updateBook = item => (dispatch, getState) => {
     ? list.map(l => (l.id === item.id ? item : l))
     : [...list, {
       ...item,
-      id: list.length + 1,
+      id: +(Math.random() * (9999 - 1) + 100).toFixed(),
       imageSrc: 'https://aimint.org/ap/wp-content/uploads/sites/18/2016/04/image-placeholder-vertical.jpg',
     }];
   dispatch({
