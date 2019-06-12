@@ -10,12 +10,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   $ cp example.env .env
 
     ```
-    SKIP_PREFLIGHT_CHECK=true
+    export SKIP_PREFLIGHT_CHECK=true
     HTTPS=true
 
     # App
-    REACT_APP_APP_ENV="development"
-
+    export REACT_APP_APP_ENV="development"
+    export FIREBASE_DEPLOY_KEY=
+    export FIREBASE_PROJECT=
     ```
 
   # Install node dependencies using [yarn] package manager
