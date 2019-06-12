@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/EvvieDrake-197x300.jpg",
+    "title": "Evvie Drake Starts Over: A Novel",
+    "author": "Linda Holmes",
+    "createdDate": "2019-06-02"
+  },
+  {
+    "id": 2,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/Fix-Her-Up_PB-199x300.jpg",
+    "title": "Fix Her Up: A Novel",
+    "author": "Tessa Bailey",
+    "createdDate": "2018-02-03"
+  },
+  {
+    "id": 3,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/9781250174611-194x300.jpg",
+    "title": "Magic for Liars: A Novel",
+    "author": "Sarah Gailey",
+    "createdDate": "2015-02-04"
+  },
+  {
+    "id": 4,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/mrs-everything-9781501133480_lg-199x300.jpg",
+    "title": "Mrs. Everything: A Novel",
+    "author": "Jennifer Weiner",
+    "createdDate": "2014-05-05"
+  },
+  {
+    "id": 5,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/NatalieTans-200x300.jpg",
+    "title": "Natalie Tan’s Book of Luck and Fortune",
+    "author": "Roselle Lim",
+    "createdDate": "2016-08-03"
+  },
+  {
+    "id": 6,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/Recursion-197x300.jpg",
+    "title": "Recursion: A Novel",
+    "author": "Roselle Lim",
+    "createdDate": "2016-01-01"
+  },
+  {
+    "id": 7,
+    "imageSrc": "http://libraryreads.org/wordpress/wp-content/uploads/2019/05/CityofGirls-199x300.jpg",
+    "title": "City of Girls: A Novel",
+    "author": "Elizabeth Gilbert",
+    "createdDate": "2019-08-02"
+  }
+]

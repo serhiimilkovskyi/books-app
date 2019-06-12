@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import {
   FETCH_BOOK_LIST_STARTED,
   FETCH_BOOK_LIST_FINISHED,
@@ -5,11 +7,11 @@ import {
   UPDATE_BOOK_FINISHED,
 } from './types';
 
-import apiResponse from '../utils/apiResponse';
-
 export const fetchBookList = () => (dispatch) => {
   dispatch({ type: FETCH_BOOK_LIST_STARTED });
-  dispatch({ type: FETCH_BOOK_LIST_FINISHED, payload: { list: apiResponse } });
+  axios.get('books.json').then((result) => {
+    dispatch({ type: FETCH_BOOK_LIST_FINISHED, payload: { list: result.data } });
+  });
 };
 
 export const deleteBook = item => (dispatch, getState) => {
@@ -21,7 +23,6 @@ export const deleteBook = item => (dispatch, getState) => {
 export const updateBook = item => (dispatch, getState) => {
   const { list } = getState().book;
   dispatch({ type: UPDATE_BOOK_STARTED });
-  // eslint-disable-next-line no-unused-expressions
   const newList = list.find(l => l.id === item.id)
     ? list.map(l => (l.id === item.id ? item : l))
     : [...list, {
@@ -34,4 +35,3 @@ export const updateBook = item => (dispatch, getState) => {
     payload: { list: newList },
   });
 };
-

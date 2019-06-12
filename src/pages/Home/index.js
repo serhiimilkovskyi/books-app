@@ -50,7 +50,7 @@ class Home extends Component {
   }
 
   handleOnEdit = (selected) => {
-    this.setState({ selected }, () => {
+    this.setState({ selected, updatedBook: selected }, () => {
       this.handleShow({
         title: 'Edit book',
         okButton: 'Save Changes',
@@ -68,7 +68,11 @@ class Home extends Component {
   handleClose = () => this.setState({
     showModal: false,
     selected: {},
-    updatedBook: {},
+    updatedBook: {
+      title: '',
+      author: '',
+      createdDate: '',
+    },
     modal: {},
     errorMessage: '',
   });
@@ -135,7 +139,7 @@ class Home extends Component {
       <Fragment>
         <Header fluid>
           <Navbar bg="dark">
-            <Navbar.Brand href="#home">BL</Navbar.Brand>
+            <Navbar.Brand href="#home">Books Library APP</Navbar.Brand>
           </Navbar>
         </Header>
 
