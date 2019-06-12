@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   # Install node dependencies using [yarn] package manager
   $ remove yarm.lock (if there is such a file)
-  $ yarn install
+  $ yarn
 ```
 
 ## Launch dev server
