@@ -19,6 +19,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     ```
 
   # Install node dependencies using [yarn] package manager
+  $ nvm install 10.6.0
+  $ nvm use 10.6.0
   $ remove yarm.lock (if there is such a file)
   $ yarn
 ```
