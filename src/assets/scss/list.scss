@@ -1,0 +1,148 @@
+.list {
+	list-style: none;
+	padding: 0;
+
+	&-wrap {
+		display: flex;
+    flex-wrap: wrap;
+    
+    margin: 0 -10px;
+	}
+
+	&-item {
+		&-wrapper {
+			width: 25%;
+		}
+
+		&-title {
+			font-weight: $bold;
+			font-size: $fz-13;
+			display: block;
+
+			line-height: 1;
+    }
+    
+    &-action {
+      color: #fff;
+      opacity: 0;
+      font-size: $h1;
+      
+      background-color: $none;
+      
+      transition: opacity 0.2s ease,
+                  background-color 0.2s ease;
+
+      & > * {
+        user-select: none;
+  
+        opacity: 1;
+
+        transform: scale(0);
+        transition: opacity 0.2s ease,
+                    transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+        &:hover {
+          cursor: pointer;
+
+          opacity: 0.8;
+        }
+
+        &:active {
+          opacity: 1;
+        }
+      }
+
+      .list-item-media & {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 6px;
+      }
+
+      
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba($default, 0.8);
+
+        & > * {
+          transform: scale(1);
+        }
+      }
+    }
+		
+		&-description {
+			color: rgba($default, 0.4);
+			font-size: $fz-12;
+
+			margin: 5px 0 0;
+		}
+
+		&-card {
+			display: flex;
+			flex-direction: column;
+			
+      padding: 10px;
+      border-radius: 6px;
+
+      box-shadow: 0px 0px 0px 0px rgba($default, 0.1);
+      transition: background-color 0.2s ease,
+                  box-shadow 0.2s ease;
+
+      &:not(.list-item-card-empty) {
+        &:hover {
+          box-shadow: 0px 20px 40px -10px rgba($default, 0.5);
+        }
+      }
+      
+      &-empty {
+        height: 100%;
+      }
+		}
+
+		&-media {
+      position: relative;
+
+			img {
+				width: 100%;
+				max-height: 220px;
+
+				object-fit: cover;
+				object-position: center;
+
+				border-radius: 6px;
+			}
+		}
+
+		&-content {
+			margin-top: 5px;
+      flex: 1;
+      
+      &-empty {
+        height: 100%;
+        max-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($default, 0.1);
+        border-radius: 6px;
+        box-shadow: 0px 0px 0px 0px rgba($default, 0.1);
+        transition: background-color 0.2s ease,
+                    box-shadow 0.2s ease;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0px 10px 25px -10px rgba($default, 0.8);
+        }
+      }
+		}
+	}
+}

@@ -1,0 +1,53 @@
+export default [
+  {
+    id: 123,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/EvvieDrake-197x300.jpg',
+    title: 'Evvie Drake Starts Over: A Novel',
+    author: 'Linda Holmes',
+    dateCreated: '12-08-2019',
+  },
+  {
+    id: 97,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/Fix-Her-Up_PB-199x300.jpg',
+    title: 'Fix Her Up: A Novel',
+    author: 'Tessa Bailey',
+    dateCreated: '24-02-2018',
+  },
+  {
+    id: 564,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/9781250174611-194x300.jpg',
+    title: 'Magic for Liars: A Novel',
+    author: 'Sarah Gailey',
+    dateCreated: '01-02-2018',
+  },
+  {
+    id: 876,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/mrs-everything-9781501133480_lg-199x300.jpg',
+    title: 'Mrs. Everything: A Novel',
+    author: 'Jennifer Weiner',
+    dateCreated: '01-02-2014',
+  },
+  {
+    id: 9,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/NatalieTans-200x300.jpg',
+    title: 'Natalie Tan’s Book of Luck and Fortune',
+    author: 'Roselle Lim',
+    dateCreated: '11-02-2016',
+  },
+  {
+    id: 912,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/Recursion-197x300.jpg',
+    title: 'Recursion: A Novel',
+    type: 'novel',
+    author: 'Roselle Lim',
+    dateCreated: '11-02-2016',
+  },
+  {
+    id: 18,
+    imageSrc: 'http://libraryreads.org/wordpress/wp-content/uploads/2019/05/CityofGirls-199x300.jpg',
+    title: 'City of Girls: A Novel',
+    type: 'novel',
+    author: 'Elizabeth Gilbert',
+    dateCreated: '19-06-2019',
+  },
+];

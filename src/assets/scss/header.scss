@@ -1,0 +1,9 @@
+.header {
+  &-container {
+    padding: 0;
+  }
+
+  & + .container {
+    padding-top: 20px;
+  }
+}

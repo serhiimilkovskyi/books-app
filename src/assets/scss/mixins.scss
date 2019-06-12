@@ -1,0 +1,271 @@
+// border-radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+        -o-border-radius: $radius;
+            border-radius: $radius;
+  }
+  // .box {
+  //     @include border-radius(10px);
+  // }
+  
+  @mixin transition($property, $duration, $timing){
+      -webkit-transition: $property $duration $timing;
+         -moz-transition: $property $duration $timing;
+          -ms-transition: $property $duration $timing;
+           -o-transition: $property $duration $timing;
+              transition: $property $duration $timing;
+  }
+  
+  @mixin transform($transforms) {
+         -moz-transform: $transforms;
+           -o-transform: $transforms;
+          -ms-transform: $transforms;
+      -webkit-transform: $transforms;
+              transform: $transforms;
+  }
+  
+  // rotate
+  @mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+  }
+  
+  // scale
+  @mixin scale($scale) {
+       @include transform(scale($scale));
+  }
+  // translate
+  @mixin translate ($x, $y) {
+     @include transform(translate($x, $y));
+  }
+  
+  @mixin gradient ($start, $end, $deg: false) {
+    @if $deg {
+      background: #7db9e8; /* Old browsers */
+      background: -moz-linear-gradient($deg , $start 0%, $end 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient($deg , $start 0%,$end 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient($deg , $start 0%,$end 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    } @else {
+      background: $end; /* Old browsers */
+      background: -moz-linear-gradient(top, $start -50%, $end  100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, $start -50%, $end  100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, $start -50%, $end 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+  }
+  
+  @mixin box-shadow($top, $left, $blur, $width, $color, $props: false) {
+    @if $props {
+      -webkit-box-shadow:$top $left $blur $width $color, $props;
+      -moz-box-shadow:$top $left $blur $width $color, $props;
+      box-shadow:$top $left $blur $width $color, $props;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $width $color;
+      -moz-box-shadow: $top $left $blur $width $color;
+      box-shadow: $top $left $blur $width $color;
+    }
+  }
+
+  @mixin background-opacity($color, $opacity) {
+    background-color: rgba($color, $opacity);
+  }
+
+  @mixin border-opacity($bWidth, $bType, $color, $opacity) {
+    background-color: $bWidth, $bType, rgba($color, $opacity);
+  }
+
+  @mixin border-color-opacity($color, $opacity) {
+    border-color: rgba($color, $opacity);
+  }
+
+  @mixin color-opacity($color, $opacity) {
+    color: rgba($color, $opacity);
+  }
+
+
+  @mixin btn-box-shadow($top, $left, $blur, $width, $color, $opacity) {
+    -webkit-box-shadow: $top $left $blur $width rgba($color, $opacity);
+    -moz-box-shadow: $top $left $blur $width rgba($color, $opacity);
+    box-shadow: $top $left $blur $width rgba($color, $opacity);
+  }
+
+  $colors: (
+    "success":  $success,
+    "primary":  $primary,
+    "info":     $info,
+    "danger":   $danger,
+    "warning":  $warning,
+    "muted":    $muted,
+  );
+
+  @each $name, $code in $colors {
+    .btn {
+      &-#{$name} {
+        color: white;
+        background-color: $code;
+        border-color: $code;
+  
+        &:hover {
+          cursor: pointer;
+          color: white;
+          border-color: $code - 20;
+          background-color: $code - 20;
+        }
+  
+        &:not(:disabled),
+        &:not(.disabled) {
+          &:active {
+            cursor: pointer;
+            color: white;
+            border-color: $code - 10;
+            background-color: $code - 10;
+          }
+        }
+  
+        &:focus {
+          color: white;
+          background-color: $code;
+          box-shadow: 0 0 0 0.2rem rgba($code, 0.5);
+        }
+  
+        &.no-hover {
+          background-color: $code;
+        }
+      }
+    }
+  }
+
+  $header: 6;
+  $counter: 180;
+
+  @for $i from 0 through $header {
+    .zi-#{i} {
+      z-index: $i;
+    }
+  }
+
+@for $i from 0 through $counter {
+
+  .rotate-#{$i} {
+    @include rotate($i);
+  }
+
+  .row {
+    &-#{$i} {
+      margin-left: -$i + px;
+      margin-right: -$i + px;
+    }
+
+    &--#{$i} {
+      margin-top: -$i + px;
+      margin-bottom: -$i + px;
+    }
+  }
+
+  .padding-#{$i} {
+    padding: $i + px;
+
+    &-right {
+      padding-right: $i + px;
+    }
+
+    &-top {
+      padding-top: $i + px;
+    }
+
+    &-left {
+      padding-left: $i + px;
+    }
+
+    &-bottom {
+      padding-bottom: $i + px;
+    }
+
+    &-lrb {
+      padding: $i + px;
+      padding-top: 0;
+    }
+  }
+
+  .mt#{$i} {
+    margin-top: $i + px !important;
+  }
+
+  .mt#{$i} {
+    margin-top: $i + px !important;
+  }
+
+  .pt#{$i} {
+    padding-top: $i + px;
+
+    &-xs {
+      @media (max-width: $screen-xs-max) {
+        padding-top: $i + px;
+      }
+    }
+    &-sm {
+      @media (max-width: $screen-sm-max) {
+        padding-top: $i + px;
+      }
+    }
+    &-md {
+      @media (max-width: $screen-md-max) {
+        padding-top: $i + px;
+      }
+    }
+
+    &-lg {
+      @media (max-width: $screen-lg-max) {
+        padding-top: $i + px;
+      }
+    }
+    &-xl {
+      @media (max-width: $screen-xl-max) {
+        padding-top: $i + px;
+      }
+    }
+  }
+
+  .list-item-wrapper {
+    .list-#{$i} & {
+      padding-top: $i + px;
+      padding-bottom: $i + px;
+    }
+  }
+
+  .margin-#{$i} {
+    margin: $i + px;
+
+      &-right {
+        margin-right: $i + px;
+      }
+
+      &-top {
+        margin-top: $i + px;
+      }
+
+      &-left {
+        margin-left: $i + px;
+      }
+
+      &-bottom {
+        margin-bottom: $i + px;
+      }
+
+      &--right {
+        margin-right: -$i + px;
+      }
+
+      &--top {
+        margin-top: -$i + px;
+      }
+
+      &--left {
+        margin-left: -$i + px;
+      }
+
+      &--bottom {
+        margin-bottom: -$i + px;
+      }
+    }
+  }
